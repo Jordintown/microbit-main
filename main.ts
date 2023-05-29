@@ -1,17 +1,15 @@
-input.onButtonPressed(Button.A, function () {
-    i += 70
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    basic.showIcon(IconNames.Diamond)
 })
-input.onButtonPressed(Button.B, function () {
-    i += -70
+input.onLogoEvent(TouchButtonEvent.Touched, function () {
+    basic.showIcon(IconNames.Yes)
 })
-let i = 70
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showIcon(IconNames.Heart)
+})
+input.onLogoEvent(TouchButtonEvent.Released, function () {
+    basic.showIcon(IconNames.No)
+})
 basic.forever(function () {
-    led.setBrightness(i)
-    basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        `)
+	
 })
